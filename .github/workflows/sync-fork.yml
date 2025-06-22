@@ -15,14 +15,9 @@ on:
 env:
   GH_TOKEN: ${{ secrets.TOKEN_GITHUB || github.token }}
   GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB || github.token }}
-  MIRROR_ORG: laciferin2024
 
 jobs:
   sync-fork:
-    permissions:
-      contents: write
-      actions: write
-
     strategy:
       max-parallel: 4
       fail-fast: false
