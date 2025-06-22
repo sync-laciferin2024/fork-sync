@@ -9,13 +9,8 @@ on:
       - "**"
   workflow_dispatch:
 
-  concurrency:
-    group: ${{ github.workflow }}
-    cancel-in-progress: false
-
   schedule:
     - cron: "*/5 * * * *"
-
 
 env:
   GH_TOKEN: ${{ secrets.TOKEN_GITHUB || github.token }}
@@ -33,15 +28,15 @@ jobs:
       fail-fast: false
       matrix:
         org: ["laciferin2024"]
-        repo:
-          [
-            "unreal-art-v0",
-            "DecenterAI-1-decenterai.com",
-          ]
+        repo: ["unreal-art-v0", "DecenterAI-1-decenterai.com"]
 
     runs-on: ubuntu-latest
     env:
       FORK_NAME: ${{ matrix.org }}/${{ matrix.repo }}
+
+    concurrency:
+      group: ${{ matrix.org }}/${{ matrix.repo }}
+      cancel-in-progress: false
 
     steps:
       - name: Create fork with custom name
