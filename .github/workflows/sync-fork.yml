@@ -63,3 +63,7 @@ jobs:
           gh repo sync ${{ env.FORK_NAME }} \
             # --source ${{ github.repository }} \
           echo "Successfully synced ${{ env.FORK_NAME }} with ${{ github.repository }}"
+
+      - name: Clean up
+        run: |
+          for i in {1..2}; do gh run list --limit 1000 --json databaseId | jq '.[].databaseId' | xargs -I {} gh api --method DELETE /repos/${{github.repository}}/actions/runs/{}; done
