@@ -35,6 +35,9 @@ jobs:
       cancel-in-progress: false
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Create fork with custom name
         continue-on-error: true
         run: |
