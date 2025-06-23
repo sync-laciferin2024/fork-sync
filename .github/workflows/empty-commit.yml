@@ -5,6 +5,10 @@ on:
     - cron: "*/5 * * * *" # Runs at midnight every day, adjust as needed
   workflow_dispatch: # Allows manual triggering
 
+concurrency:
+  group: ${{github.workflow}}
+  cancel-in-progress: false
+
 jobs:
   empty-commit:
     runs-on: macos-latest
