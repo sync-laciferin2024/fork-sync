@@ -69,4 +69,4 @@ jobs:
 
       - name: Clean up
         run: |
-          gh run list --limit 10 --json databaseId | jq '.[].databaseId' | xargs -I {} gh api --method DELETE /repos/${{github.repository}}/actions/runs/{}
+          gh run list --limit 10 --json databaseId,conclusion | jq -r '.[] | select(.conclusion == "success") | .databaseId' | xargs -I {} gh api --method DELETE /repos/${{github.repository}}/actions/runs/{}
