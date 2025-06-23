@@ -17,8 +17,8 @@ on:
         type: number
 
 env:
-  COMMIT_COUNT: ${{ github.event.inputs.commit_count || 10 }}
-  COMMIT_INTERVAL: ${{ github.event.inputs.commit_interval || 6 }}
+  COMMIT_COUNT: ${{ github.event.inputs.commit_count || 20 }}
+  COMMIT_INTERVAL: ${{ github.event.inputs.commit_interval || 30 }}
 concurrency:
   group: ${{github.workflow}}
   cancel-in-progress: false
