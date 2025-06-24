@@ -24,7 +24,7 @@ jobs:
       fail-fast: false
       matrix:
         org: ["laciferin2024"]
-        repo: ["unreal-art-v0", "DecenterAI-1-decenterai.com"]
+        repo: ["unreal-art-v0", "DecenterAI-1-decenterai.com","lupe-connect-landing"]
 
     runs-on: ubuntu-latest
     env:
