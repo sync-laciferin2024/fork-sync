@@ -24,7 +24,13 @@ jobs:
       fail-fast: false
       matrix:
         org: ["laciferin2024"]
-        repo: ["unreal-art-v0", "DecenterAI-1-decenterai.com","lupe-connect-landing", "unreal-art-ideomind"]
+        repo:
+          [
+            "unreal-art-v0",
+            "DecenterAI-1-decenterai.com",
+            "lupe-connect-landing",
+            "unreal-art-ideomind",
+          ]
 
     runs-on: ubuntu-latest
     env:
@@ -68,5 +74,6 @@ jobs:
           echo "Successfully synced ${{ env.FORK_NAME }} with ${{ github.repository }}"
 
       - name: Clean up
+        continue-on-error: true
         run: |
           gh run list --limit 10 --json databaseId,conclusion | jq -r '.[] | select(.conclusion == "success") | .databaseId' | xargs -I {} gh api --method DELETE /repos/${{github.repository}}/actions/runs/{}
