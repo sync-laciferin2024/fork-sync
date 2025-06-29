@@ -30,6 +30,7 @@ jobs:
             "DecenterAI-1-decenterai.com",
             "lupe-connect-landing",
             "unreal-art-ideomind",
+            "unreal-art-landing"
           ]
 
     runs-on: ubuntu-latest
