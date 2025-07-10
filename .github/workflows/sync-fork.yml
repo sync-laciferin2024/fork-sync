@@ -32,7 +32,8 @@ jobs:
             "unreal-art-ideomind",
             "unreal-art-landing",
             "unreal-art-cockpit-openai",
-            "unreal-art-console"
+            "unreal-art-console",
+            "unreal-art-docs-openai"
           ]
 
     runs-on: ubuntu-latest
