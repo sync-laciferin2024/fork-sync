@@ -33,7 +33,7 @@ jobs:
             "unreal-art-landing",
             "unreal-art-cockpit-openai",
             "unreal-art-console",
-            "unreal-art-docs-openai"
+            "unreal-art-docs"
           ]
 
     runs-on: ubuntu-latest
