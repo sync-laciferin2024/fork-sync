@@ -45,7 +45,7 @@ jobs:
       - name: Create multiple empty commits
         run: |
           git checkout -B empty
-          git push origin empty -f
+          git push -u origin empty -f
           # Determine number of commits to create
           COMMIT_COUNT=${{ env.COMMIT_COUNT }}
           COMMIT_INTERVAL=${{ env.COMMIT_INTERVAL }}
