@@ -33,7 +33,8 @@ jobs:
             "unreal-art-landing",
             "unreal-art-cockpit-openai",
             "unreal-art-console",
-            "unreal-art-docs"
+            "unreal-art-docs",
+            "gamerhub-Marketplace-Pro"
           ]
 
     runs-on: ubuntu-latest
