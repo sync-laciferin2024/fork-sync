@@ -32,8 +32,8 @@ jobs:
             "unreal-art-ideomind",
             "unreal-art-landing",
             "unreal-art-cockpit-openai",
-            "unreal-art-console",
             "unreal-art-docs",
+            "unreal-unreal.art"
             "gamerhub-Marketplace-Pro"
           ]
 
